@@ -4,6 +4,7 @@ use warnings;
 use Moose::Exporter;
 
 our $VERSION = '0.01';
+use 5.008001;
 
 use MooseX::Types -declare => ['ExistingFile', 'ExistingDir'];
 use MooseX::Types::Moose qw(Str);
