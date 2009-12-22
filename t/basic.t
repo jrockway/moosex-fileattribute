@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use Test::More tests => 6;
 use Test::Exception;
+use File::Spec;
 
 {
     package Class;
@@ -25,11 +26,12 @@ isa_ok $c->dir, 'Path::Class::Dir';
     has_file 'file' => ( must_exist => 1 );
 }
 
-my $no_exist = '/omg/hopefully/this/does/not/exist!';
+my $no_exist
+    = File::Spec->catfile( '', qw/omg hopefully this does not exist!/ );
 
 throws_ok {
     EfClass->new( file => $no_exist );
-} qr/File '$no_exist' must exist./, 'file must exist';
+} qr/File '\Q$no_exist\E' must exist./, 'file must exist';
 
 {
     package EdClass;
@@ -41,7 +43,7 @@ throws_ok {
 
 throws_ok {
     EdClass->new( dir => $no_exist );
-} qr/Directory '$no_exist' must exist./, 'directory must exist';
+} qr/Directory '\Q$no_exist\E' must exist./, 'directory must exist';
 
 lives_ok {
     EdClass->new( dir => '.' ); # if the current directory does not exist, I hate you.
