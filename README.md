@@ -1,5 +1,7 @@
 # MooseX::FileAttribute
 
+[![Build Status](https://travis-ci.org/JJ/moosex-fileattribute.svg?branch=master)](https://travis-ci.org/JJ/moosex-fileattribute)
+
 This is the repository for
 the
 [CPAN module `File::Attribute`](https://metacpan.org/release/MooseX-FileAttribute). It
