@@ -1,1 +1,10 @@
-0.01 Initial Release
+Change history for MooseX-FileAttribute
+
+0.03      2017-04-06
+    - Updated the Change log
+
+0.02      2009-12-21
+    - fix tests on Win32, etc.
+
+0.01      2009-11-12
+    - Initial Release
